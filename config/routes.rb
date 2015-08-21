@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
   
-  resources :phrases, :only => :index
+  get 'home/index'
+
+  root :to => 'home#index'
+  resources :phrases, :only => :index, :defaults => { :format => :json }
 
 end
